@@ -1,0 +1,77 @@
+diff -u --recursive smpeg-0.4.4/audio/MPEGaudio.cpp smpeg-0.4.4-patched/audio/MPEGaudio.cpp
+--- smpeg-0.4.4/audio/MPEGaudio.cpp	Wed Apr 04 13:42:40 2001
++++ smpeg-0.4.4-patched/audio/MPEGaudio.cpp	Wed Nov 29 18:02:13 2006
+@@ -190,6 +190,9 @@
+ {
+     ResetPause();
+     if ( valid_stream ) {
++       if ( playing ) {
++           Stop();
++       }
+ #ifdef THREADED_AUDIO
+         StartDecoding();
+ #endif
+@@ -203,6 +206,9 @@
+         SDL_LockAudio();
+         playing = false;
+         SDL_UnlockAudio();
++#ifdef THREADED_AUDIO
++        StopDecoding();
++#endif
+     }
+     ResetPause();
+ }
+@@ -210,12 +216,12 @@
+ MPEGaudio:: Rewind(void)
+ {
+     Stop();
+-
++#if 0
+ #ifdef THREADED_AUDIO
+     /* Stop the decode thread */
+     StopDecoding();
+ #endif
+-
++#endif
+     clearrawdata();
+     decodedframe = 0;
+     currentframe = 0;
+diff -u --recursive smpeg-0.4.4/video/gdith.cpp smpeg-0.4.4-patched/video/gdith.cpp
+--- smpeg-0.4.4/video/gdith.cpp	Wed Apr 04 17:22:28 2001
++++ smpeg-0.4.4-patched/video/gdith.cpp	Thu Nov 30 22:02:28 2006
+@@ -312,7 +312,7 @@
+   if((_filter->flags & SMPEG_FILTER_INFO_MB_ERROR) && vid_stream->current->mb_qscale)
+   {
+     /* Retreive macroblock quantization error info */
+-    info.yuv_mb_square_error = vid_stream->current->mb_qscale;
++    info.yuv_mb_square_error = (Uint16*)vid_stream->current->mb_qscale;
+   }
+     
+   if( _filter )
+@@ -333,10 +333,10 @@
+     pitches[1] = _w / 2;
+     pitches[2] = _w / 2;
+     src.pitches = pitches;
+-    pixels[0] = vid_stream->current->image;
+-    pixels[1] = vid_stream->current->image + pitches[0] * _h;
+-    pixels[2] = vid_stream->current->image + pitches[0] * _h +
+-                                             pitches[1] * _h / 2;
++    pixels[0] = (Uint8*)vid_stream->current->image;
++    pixels[1] = (Uint8*)vid_stream->current->image + pitches[0] * _h;
++    pixels[2] = (Uint8*)vid_stream->current->image + pitches[0] * _h +
++                                                     pitches[1] * _h / 2;
+     src.pixels = pixels;
+ #endif
+ 
+diff -u --recursive smpeg-0.4.4/video/readfile.cpp smpeg-0.4.4-patched/video/readfile.cpp
+--- smpeg-0.4.4/video/readfile.cpp	Wed May 17 17:45:46 2000
++++ smpeg-0.4.4-patched/video/readfile.cpp	Thu Nov 30 22:02:28 2006
+@@ -121,7 +121,7 @@
+   request = (vid_stream->max_buf_length-length)*4;
+   
+   data_pos = vid_stream->_smpeg->mpeg->pos;  
+-  num_read = vid_stream->_smpeg->mpeg->copy_data(mark, request);
++  num_read = vid_stream->_smpeg->mpeg->copy_data((Uint8*)mark, request);
+ 
+   vid_stream->timestamp = vid_stream->_smpeg->mpeg->timestamp;
+   timestamp_offset = vid_stream->_smpeg->mpeg->timestamp_pos - data_pos;

@@ -1,0 +1,807 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>NetworkModule: クラス Yanesdk::Network::Network</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.1-p1 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+    <li id="current"><a href="annotated.html"><span>クラス</span></a></li>
+    <li><a href="files.html"><span>ファイル</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>構成</span></a></li>
+    <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+    <li><a href="functions.html"><span>構成メンバ</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespace_yanesdk.html">Yanesdk</a>::<a class="el" href="namespace_yanesdk_1_1_network.html">Network</a>::<a class="el" href="class_yanesdk_1_1_network_1_1_network.html">Network</a></div>
+<h1>クラス Yanesdk::Network::Network</h1><!-- doxytag: class="Yanesdk::Network::Network" --><!-- doxytag: inherits="Yanesdk::Network::INetwork" --><code>#include &lt;<a class="el" href="_network_8h-source.html">Network.h</a>&gt;</code>
+<p>
+<p>Yanesdk::Network::Networkに対する継承グラフ
+<p><center><img src="class_yanesdk_1_1_network_1_1_network.png" usemap="#Yanesdk::Network::Network_map" border="0" alt=""></center>
+<map name="Yanesdk::Network::Network_map">
+<area href="class_yanesdk_1_1_network_1_1_i_network.html" alt="Yanesdk::Network::INetwork" shape="rect" coords="0,0,168,24">
+</map>
+<a href="class_yanesdk_1_1_network_1_1_network-members.html">すべてのメンバ一覧</a><hr><a name="_details"></a><h2>説明</h2>
+TCPで双方向通信を行うクラス 
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#cdb2a87910063199be7af4168a80ec39">Network</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#8e5056556fed55a15882fae9c0cf5174">~Network</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#ef8d7a4bd1e0e88ef0a9d7f1af73aa1b">SetNetworkID</a> (boost::optional&lt; uint64_t &gt; n)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ネットワークIDを取得・設定します。 ネットワークIDを使用しない場合はnull値です。  <a href="#ef8d7a4bd1e0e88ef0a9d7f1af73aa1b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">boost::optional&lt; uint64_t &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#44408f383e32fe010e32c9a96b07a470">GetNetworkID</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#21030d991e254fb6126b85b5184b42da">SetKeepAliveSendInterval</a> (uint64_t n)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">何回のReadメソッドの呼び出しで、KeepAliveメッセージを接続先に送信するかどうかを取得・設定します。  <a href="#21030d991e254fb6126b85b5184b42da"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint64_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#ca8109270986b0bee9a54c77d5699d88">GetKeepAliveSendInterval</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#28a6d6b66890ac11923ee044a9fac911">SetWriteBufferSize</a> (int size)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">送信バッファのサイズを指定します。既定では8192バイトです。  <a href="#28a6d6b66890ac11923ee044a9fac911"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#2e71ec4282426fe61344949a2ca948f2">GetWriteBufferSize</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#0785b02a69e8c3cb3cf71f53f111180b">SetReadBufferSize</a> (int size)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">受信バッファのサイズを指定します。 既定では8192バイトです。  <a href="#0785b02a69e8c3cb3cf71f53f111180b"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#6eb0d8d7602f1d0a6911f16ec3904b92">GetReadBufferSize</a> () const</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint64_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#8b0e29a9cabeb67321a6ba483d4a643d">Connect</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">VN_rootに接続を要求  <a href="#8b0e29a9cabeb67321a6ba483d4a643d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint64_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#0fd848314bfccda546ef22b4e471c1fc">Listen</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Client側からの接続をlisten(TCP/IPのlisten的な意味で)する。  <a href="#0fd848314bfccda546ef22b4e471c1fc"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#5b48a39f8e4bee75e5fdcaf1c0b03e68">Disconnect</a> (uint64_t handle)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Listenで確立してあった接続を切断する。 以後、そのhandleは無効となる。  <a href="#5b48a39f8e4bee75e5fdcaf1c0b03e68"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#60dc6129d0839f4919abff03e4fb9c2d">Flush</a> (uint64_t handle)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">write bufferをいますぐ送信する。  <a href="#60dc6129d0839f4919abff03e4fb9c2d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#995103c2d64dc9bed285623a873e76ab">GetIpAddress</a> (uint64_t handle, <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;ipAddress)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">IPアドレスを取得する  <a href="#995103c2d64dc9bed285623a873e76ab"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#48f85d9cc3057552367e6651166a837e">SetHostName</a> (const char *hostname, int portnumber)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続先ホスト名とポートを指定します。  <a href="#48f85d9cc3057552367e6651166a837e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#b2eefcc2f952cd9a72de761f53d1550d">SetMaxPacketLength</a> (int maxPacketLength)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">最大パケット長制限を設ける  <a href="#b2eefcc2f952cd9a72de761f53d1550d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#1455015bc0a42eba078f40a3f98a6fc9">Write</a> (uint64_t handle, const void *data, size_t dataLength)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">確立したコネクションに対してデータ送信  <a href="#1455015bc0a42eba078f40a3f98a6fc9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#8c4a73c9fbdbd961a7c29d4bdf949273">Write</a> (uint64_t handle, const <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;memory)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">RawMemory版Write()  <a href="#8c4a73c9fbdbd961a7c29d4bdf949273"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#8bc97022af0acb33fb76f11a3d5716e5">Write</a> (uint64_t handle, const std::vector&lt; uint8_t &gt; &amp;memory)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vector版Write()  <a href="#8bc97022af0acb33fb76f11a3d5716e5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#58a0225d0617eea036948fed537f0ad7">Read</a> (uint64_t handle, <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">確立したコネクションに対してデータの読み込み。  <a href="#58a0225d0617eea036948fed537f0ad7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#01ed26ddaf75bb4f6ecbd4fc3f03ee92">Read</a> (uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vector版Read()  <a href="#01ed26ddaf75bb4f6ecbd4fc3f03ee92"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#5ef87a8d5fb1fabe28316abc52b2c66a">GetIpAddress</a> (uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vector版GetIpAddress()  <a href="#5ef87a8d5fb1fabe28316abc52b2c66a"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Static Public 変数</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">static uint64_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#b4bbf94235af9e579aaf8243efabfb58">INITIAL_HANDLE_VALUE</a></td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">初期ハンドル値  <a href="#b4bbf94235af9e579aaf8243efabfb58"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#6700886aefad283004499835c8a4159d">InnerRead</a> (uint64_t handle, <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;data)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network.html#e1718389f121ae4733975ce982856e6a">InnerWrite</a> (uint64_t handle, const void *data, size_t dataLength)</td></tr>
+
+</table>
+<hr><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" name="cdb2a87910063199be7af4168a80ec39"></a><!-- doxytag: member="Yanesdk::Network::Network::Network" ref="cdb2a87910063199be7af4168a80ec39" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Yanesdk::Network::Network::Network           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8e5056556fed55a15882fae9c0cf5174"></a><!-- doxytag: member="Yanesdk::Network::Network::~Network" ref="8e5056556fed55a15882fae9c0cf5174" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Yanesdk::Network::Network::~Network           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="ef8d7a4bd1e0e88ef0a9d7f1af73aa1b"></a><!-- doxytag: member="Yanesdk::Network::Network::SetNetworkID" ref="ef8d7a4bd1e0e88ef0a9d7f1af73aa1b" args="(boost::optional&lt; uint64_t &gt; n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::Network::SetNetworkID           </td>
+          <td>(</td>
+          <td class="paramtype">boost::optional&lt; uint64_t &gt;&nbsp;</td>
+          <td class="paramname"> <em>n</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ネットワークIDを取得・設定します。 ネットワークIDを使用しない場合はnull値です。 
+<p>
+異なるネットワークIDを持つインスタンス同士の通信はできません。 サーバ側はListenメソッドを呼び出す前、クライアント側はConnectメソッドを呼び出す前に それぞれ設定しておく必要があります。 
+</div>
+</div><p>
+<a class="anchor" name="44408f383e32fe010e32c9a96b07a470"></a><!-- doxytag: member="Yanesdk::Network::Network::GetNetworkID" ref="44408f383e32fe010e32c9a96b07a470" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::optional&lt;uint64_t&gt; Yanesdk::Network::Network::GetNetworkID           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="21030d991e254fb6126b85b5184b42da"></a><!-- doxytag: member="Yanesdk::Network::Network::SetKeepAliveSendInterval" ref="21030d991e254fb6126b85b5184b42da" args="(uint64_t n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::Network::SetKeepAliveSendInterval           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>n</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+何回のReadメソッドの呼び出しで、KeepAliveメッセージを接続先に送信するかどうかを取得・設定します。 
+<p>
+なお、Readの呼び出し回数は、各handleごとにカウントします。<p>
+ディフォルトは 900で、秒間30回のReadを行なうとして、 900 = 30回×30秒であり、30秒ごとに切断検知のためのKeepAliveメッセージを送信します。<p>
+0が設定されていると送信しません。 送信しない場合、切断を検知できないので、かならず設定するようにしてください。 
+</div>
+</div><p>
+<a class="anchor" name="ca8109270986b0bee9a54c77d5699d88"></a><!-- doxytag: member="Yanesdk::Network::Network::GetKeepAliveSendInterval" ref="ca8109270986b0bee9a54c77d5699d88" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Yanesdk::Network::Network::GetKeepAliveSendInterval           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="28a6d6b66890ac11923ee044a9fac911"></a><!-- doxytag: member="Yanesdk::Network::Network::SetWriteBufferSize" ref="28a6d6b66890ac11923ee044a9fac911" args="(int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::Network::SetWriteBufferSize           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>size</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+送信バッファのサイズを指定します。既定では8192バイトです。 
+<p>
+受信側でReadメソッドが定期的に呼び出されなかったり、 呼び出しのインターバルが甘かったりして、 受信側の受信バッファに残ったままのバイト数が ReadBufferSizeの値を超えると、バッファあふれとなり 受信元との接続は切断されます。 
+</div>
+</div><p>
+<a class="anchor" name="2e71ec4282426fe61344949a2ca948f2"></a><!-- doxytag: member="Yanesdk::Network::Network::GetWriteBufferSize" ref="2e71ec4282426fe61344949a2ca948f2" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::Network::GetWriteBufferSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="0785b02a69e8c3cb3cf71f53f111180b"></a><!-- doxytag: member="Yanesdk::Network::Network::SetReadBufferSize" ref="0785b02a69e8c3cb3cf71f53f111180b" args="(int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::Network::SetReadBufferSize           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>size</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+受信バッファのサイズを指定します。 既定では8192バイトです。 
+<p>
+Readメソッドが定期的に呼び出されなかったり、 呼び出しのインターバルが甘かったりして、 受信バッファに残ったままのバイト数が ReadBufferSizeの値を超えると、バッファあふれとなり 送信元との接続は切断されます。 
+</div>
+</div><p>
+<a class="anchor" name="6eb0d8d7602f1d0a6911f16ec3904b92"></a><!-- doxytag: member="Yanesdk::Network::Network::GetReadBufferSize" ref="6eb0d8d7602f1d0a6911f16ec3904b92" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::Network::GetReadBufferSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8b0e29a9cabeb67321a6ba483d4a643d"></a><!-- doxytag: member="Yanesdk::Network::Network::Connect" ref="8b0e29a9cabeb67321a6ba483d4a643d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Yanesdk::Network::Network::Connect           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+VN_rootに接続を要求 
+<p>
+戻り値は、コネクションハンドル。 接続に失敗した場合は0。 
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#7dda2a48a29cae7ed5acebdb00063b72">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="0fd848314bfccda546ef22b4e471c1fc"></a><!-- doxytag: member="Yanesdk::Network::Network::Listen" ref="0fd848314bfccda546ef22b4e471c1fc" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Yanesdk::Network::Network::Listen           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Client側からの接続をlisten(TCP/IPのlisten的な意味で)する。 
+<p>
+サーバー側でしかこのメソッドは呼び出さない。 戻り値は、コネクションハンドル。<p>
+確立したコネクションが気にいらないときは、 Disconnectを呼び出して接続を切断することが出来る。<p>
+接続を要求しているものがなければ0。 
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#d8c225e516d4b8995308de5bd1b8f4b6">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="5b48a39f8e4bee75e5fdcaf1c0b03e68"></a><!-- doxytag: member="Yanesdk::Network::Network::Disconnect" ref="5b48a39f8e4bee75e5fdcaf1c0b03e68" args="(uint64_t handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::Network::Disconnect           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Listenで確立してあった接続を切断する。 以後、そのhandleは無効となる。 
+<p>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#5466bd860d72a6e6b4dd5bf473226c09">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="60dc6129d0839f4919abff03e4fb9c2d"></a><!-- doxytag: member="Yanesdk::Network::Network::Flush" ref="60dc6129d0839f4919abff03e4fb9c2d" args="(uint64_t handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::Network::Flush           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+write bufferをいますぐ送信する。 
+<p>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>接続が切断された場合は、非0が返る。 </dd></dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#96e7d6e9f6670836cc11277e836f46d5">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="995103c2d64dc9bed285623a873e76ab"></a><!-- doxytag: member="Yanesdk::Network::Network::GetIpAddress" ref="995103c2d64dc9bed285623a873e76ab" args="(uint64_t handle, RawMemory &amp;ipAddress)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Yanesdk::Network::Network::GetIpAddress           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>ipAddress</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+IPアドレスを取得する 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>handle</em>&nbsp;</td><td>IPアドレスを取得するハンドル </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ipAddress</em>&nbsp;</td><td>IPアドレス </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>true:成功, false:失敗 </dd></dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#60cf0fd23411be2cc0e9bfca66bbc647">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="48f85d9cc3057552367e6651166a837e"></a><!-- doxytag: member="Yanesdk::Network::Network::SetHostName" ref="48f85d9cc3057552367e6651166a837e" args="(const char *hostname, int portnumber)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::Network::SetHostName           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>hostname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>portnumber</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+接続先ホスト名とポートを指定します。 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>hostname</em>&nbsp;</td><td>ホスト名。受付側として利用する場合は無効 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>portnumber</em>&nbsp;</td><td>ポート番号 </td></tr>
+  </table>
+</dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#8f71bbc84a0bd8e7233b68612b690a56">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="b2eefcc2f952cd9a72de761f53d1550d"></a><!-- doxytag: member="Yanesdk::Network::Network::SetMaxPacketLength" ref="b2eefcc2f952cd9a72de761f53d1550d" args="(int maxPacketLength)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::Network::SetMaxPacketLength           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>maxPacketLength</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+最大パケット長制限を設ける 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>maxPacketLength</em>&nbsp;</td><td>値&gt;0なら制限値、値&lt;=0なら制限しない </td></tr>
+  </table>
+</dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#9752fb72e63da9df797b9a4c64c29f80">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="6700886aefad283004499835c8a4159d"></a><!-- doxytag: member="Yanesdk::Network::Network::InnerRead" ref="6700886aefad283004499835c8a4159d" args="(uint64_t handle, RawMemory &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::Network::InnerRead           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#bcd8e462cd3d28bcf6435c3a2b4c35a7">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="e1718389f121ae4733975ce982856e6a"></a><!-- doxytag: member="Yanesdk::Network::Network::InnerWrite" ref="e1718389f121ae4733975ce982856e6a" args="(uint64_t handle, const void *data, size_t dataLength)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::Network::InnerWrite           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>dataLength</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#102cbd702226aadf6661a0cb31fa40de">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="1455015bc0a42eba078f40a3f98a6fc9"></a><!-- doxytag: member="Yanesdk::Network::Network::Write" ref="1455015bc0a42eba078f40a3f98a6fc9" args="(uint64_t handle, const void *data, size_t dataLength)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Write           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>dataLength</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+確立したコネクションに対してデータ送信 
+<p>
+接続が切断された場合は、非0が返る。 送信は1～2秒分、bufferingしてから送信される。<p>
+Writeしたあと、Flushを呼び出すと、即座にbufferingしている ぶんを送信する。<p>
+connection切断時に非0が返る。 
+</div>
+</div><p>
+<a class="anchor" name="8c4a73c9fbdbd961a7c29d4bdf949273"></a><!-- doxytag: member="Yanesdk::Network::Network::Write" ref="8c4a73c9fbdbd961a7c29d4bdf949273" args="(uint64_t handle, const RawMemory &amp;memory)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Write           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>memory</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+RawMemory版Write() 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8bc97022af0acb33fb76f11a3d5716e5"></a><!-- doxytag: member="Yanesdk::Network::Network::Write" ref="8bc97022af0acb33fb76f11a3d5716e5" args="(uint64_t handle, const std::vector&lt; uint8_t &gt; &amp;memory)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Write           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>memory</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vector版Write() 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="58a0225d0617eea036948fed537f0ad7"></a><!-- doxytag: member="Yanesdk::Network::Network::Read" ref="58a0225d0617eea036948fed537f0ad7" args="(uint64_t handle, RawMemory &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Read           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+確立したコネクションに対してデータの読み込み。 
+<p>
+読み込むべきデータが無いならば data = nullが返る。<p>
+connection切断時に非0が返る。 
+</div>
+</div><p>
+<a class="anchor" name="01ed26ddaf75bb4f6ecbd4fc3f03ee92"></a><!-- doxytag: member="Yanesdk::Network::Network::Read" ref="01ed26ddaf75bb4f6ecbd4fc3f03ee92" args="(uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Read           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vector版Read() 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5ef87a8d5fb1fabe28316abc52b2c66a"></a><!-- doxytag: member="Yanesdk::Network::Network::GetIpAddress" ref="5ef87a8d5fb1fabe28316abc52b2c66a" args="(uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::GetIpAddress           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vector版GetIpAddress() 
+<p>
+
+</div>
+</div><p>
+<hr><h2>変数</h2>
+<a class="anchor" name="b4bbf94235af9e579aaf8243efabfb58"></a><!-- doxytag: member="Yanesdk::Network::Network::INITIAL_HANDLE_VALUE" ref="b4bbf94235af9e579aaf8243efabfb58" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t <a class="el" href="class_yanesdk_1_1_network_1_1_network.html#b4bbf94235af9e579aaf8243efabfb58">Yanesdk::Network::Network::INITIAL_HANDLE_VALUE</a><code> [static]</code>          </td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+初期ハンドル値 
+<p>
+
+</div>
+</div><p>
+<hr>このクラスの説明は次のファイルから生成されました:<ul>
+<li>NetworkModule/include/NetworkModule/<a class="el" href="_network_8h-source.html">Network.h</a></ul>
+<hr size="1"><address style="align: right;"><small>NetworkModuleに対してFri Feb 16 12:02:09 2007に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.1-p1 </small></address>
+</body>
+</html>

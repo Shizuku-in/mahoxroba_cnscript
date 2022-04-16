@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>NetworkModule: クラス Yanesdk::Network::RawMemory</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.1-p1 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+    <li id="current"><a href="annotated.html"><span>クラス</span></a></li>
+    <li><a href="files.html"><span>ファイル</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>構成</span></a></li>
+    <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+    <li><a href="functions.html"><span>構成メンバ</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespace_yanesdk.html">Yanesdk</a>::<a class="el" href="namespace_yanesdk_1_1_network.html">Network</a>::<a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a></div>
+<h1>クラス Yanesdk::Network::RawMemory</h1><!-- doxytag: class="Yanesdk::Network::RawMemory" --><code>#include &lt;<a class="el" href="_raw_memory_8h-source.html">RawMemory.h</a>&gt;</code>
+<p>
+<a href="class_yanesdk_1_1_network_1_1_raw_memory-members.html">すべてのメンバ一覧</a><hr><a name="_details"></a><h2>説明</h2>
+生のメモリ。 
+<p>
+std::vectorを使ってしまうと、DLLのバイナリの互換性が微妙になってしまうので、 std::vectorはヘッダでのみ使って、ソース側ではこのクラスを用いる。 
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#f83dea35742701640b57537c528b46ef">RawMemory</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#104c2e432010b2b61c4fee4fdd31cf82">~RawMemory</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#1860816756bf66d8bc2981d11a58398d">Resize</a> (size_t n)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">メモリのリサイズ  <a href="#1860816756bf66d8bc2981d11a58398d"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint8_t *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#387f0e32e859d17c005c4fa798198477">Get</a> () const</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ポインタの取得  <a href="#387f0e32e859d17c005c4fa798198477"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">size_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#5756041c2023bad10b6e8ac9e370f248">GetSize</a> () const</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">サイズの取得  <a href="#5756041c2023bad10b6e8ac9e370f248"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#21c96f12e5d9f5a703564b31d7754e75">Append</a> (void *data, size_t dataLength)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">追加  <a href="#21c96f12e5d9f5a703564b31d7754e75"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#b3dd0f074f6b03e11491fed523e9d9af">CopyFrom</a> (const <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;from)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コピー  <a href="#b3dd0f074f6b03e11491fed523e9d9af"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#75ffb990a99d49c54e26c49eed6daebb">CopyFrom</a> (const std::vector&lt; uint8_t &gt; &amp;from)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">コピー  <a href="#75ffb990a99d49c54e26c49eed6daebb"></a><br></td></tr>
+<tr><td class="memTemplParams" nowrap colspan="2">template&lt;class IT&gt; </td></tr>
+<tr><td class="memTemplItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#8450871a0a7edef4e72bf17fdb16cb98">CopyFrom</a> (IT it, IT itEnd)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">イテレータからのコピー  <a href="#8450871a0a7edef4e72bf17fdb16cb98"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint8_t *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#a1cf046e37e3f4ff56fa8c2aebd62f55">GetBegin</a> () const</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">STL用  <a href="#a1cf046e37e3f4ff56fa8c2aebd62f55"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint8_t *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#a191bb827dd7d3af90c82f7d54f8f769">GetEnd</a> () const</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">STL用  <a href="#a191bb827dd7d3af90c82f7d54f8f769"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">std::vector&lt; uint8_t &gt;&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#b5c43ebe3af7a2edf8127c642d51cd9f">ToArray</a> () const</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vectorへの変換  <a href="#b5c43ebe3af7a2edf8127c642d51cd9f"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html#4013b8d4782eb371a9982993c8022cdf">AssignTo</a> (std::vector&lt; uint8_t &gt; &amp;data) const </td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vectorへのコピー  <a href="#4013b8d4782eb371a9982993c8022cdf"></a><br></td></tr>
+</table>
+<hr><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" name="f83dea35742701640b57537c528b46ef"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::RawMemory" ref="f83dea35742701640b57537c528b46ef" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Yanesdk::Network::RawMemory::RawMemory           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="104c2e432010b2b61c4fee4fdd31cf82"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::~RawMemory" ref="104c2e432010b2b61c4fee4fdd31cf82" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Yanesdk::Network::RawMemory::~RawMemory           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="1860816756bf66d8bc2981d11a58398d"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::Resize" ref="1860816756bf66d8bc2981d11a58398d" args="(size_t n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::RawMemory::Resize           </td>
+          <td>(</td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>n</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+メモリのリサイズ 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="387f0e32e859d17c005c4fa798198477"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::Get" ref="387f0e32e859d17c005c4fa798198477" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* Yanesdk::Network::RawMemory::Get           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ポインタの取得 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5756041c2023bad10b6e8ac9e370f248"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::GetSize" ref="5756041c2023bad10b6e8ac9e370f248" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Yanesdk::Network::RawMemory::GetSize           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+サイズの取得 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="21c96f12e5d9f5a703564b31d7754e75"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::Append" ref="21c96f12e5d9f5a703564b31d7754e75" args="(void *data, size_t dataLength)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::RawMemory::Append           </td>
+          <td>(</td>
+          <td class="paramtype">void *&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>dataLength</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+追加 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b3dd0f074f6b03e11491fed523e9d9af"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::CopyFrom" ref="b3dd0f074f6b03e11491fed523e9d9af" args="(const RawMemory &amp;from)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::RawMemory::CopyFrom           </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>from</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+コピー 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="75ffb990a99d49c54e26c49eed6daebb"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::CopyFrom" ref="75ffb990a99d49c54e26c49eed6daebb" args="(const std::vector&lt; uint8_t &gt; &amp;from)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::RawMemory::CopyFrom           </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>from</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+コピー 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8450871a0a7edef4e72bf17fdb16cb98"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::CopyFrom" ref="8450871a0a7edef4e72bf17fdb16cb98" args="(IT it, IT itEnd)" -->
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class IT&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::RawMemory::CopyFrom           </td>
+          <td>(</td>
+          <td class="paramtype">IT&nbsp;</td>
+          <td class="paramname"> <em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IT&nbsp;</td>
+          <td class="paramname"> <em>itEnd</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+イテレータからのコピー 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="a1cf046e37e3f4ff56fa8c2aebd62f55"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::GetBegin" ref="a1cf046e37e3f4ff56fa8c2aebd62f55" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* Yanesdk::Network::RawMemory::GetBegin           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+STL用 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="a191bb827dd7d3af90c82f7d54f8f769"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::GetEnd" ref="a191bb827dd7d3af90c82f7d54f8f769" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* Yanesdk::Network::RawMemory::GetEnd           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+STL用 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="b5c43ebe3af7a2edf8127c642d51cd9f"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::ToArray" ref="b5c43ebe3af7a2edf8127c642d51cd9f" args="() const" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;uint8_t&gt; Yanesdk::Network::RawMemory::ToArray           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vectorへの変換 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="4013b8d4782eb371a9982993c8022cdf"></a><!-- doxytag: member="Yanesdk::Network::RawMemory::AssignTo" ref="4013b8d4782eb371a9982993c8022cdf" args="(std::vector&lt; uint8_t &gt; &amp;data) const " -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::RawMemory::AssignTo           </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"> const<code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vectorへのコピー 
+<p>
+
+</div>
+</div><p>
+<hr>このクラスの説明は次のファイルから生成されました:<ul>
+<li>NetworkModule/include/NetworkModule/<a class="el" href="_raw_memory_8h-source.html">RawMemory.h</a></ul>
+<hr size="1"><address style="align: right;"><small>NetworkModuleに対してFri Feb 16 12:02:09 2007に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.1-p1 </small></address>
+</body>
+</html>

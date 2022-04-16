@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>NetworkModule: NetworkModule/include/NetworkModule/RawMemory.h ソースファイル</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.1-p1 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+    <li><a href="annotated.html"><span>クラス</span></a></li>
+    <li id="current"><a href="files.html"><span>ファイル</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+  </ul></div>
+<h1>NetworkModule/include/NetworkModule/RawMemory.h</h1><a href="_raw_memory_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __RAWMEMORY_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __RAWMEMORY_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include &lt;vector&gt;</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;boost/noncopyable.hpp&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include "<a class="code" href="config_8h.html">config.h</a>"</span>
+<a name="l00006"></a>00006 <span class="preprocessor">#pragma warning(push)</span>
+<a name="l00007"></a>00007 <span class="preprocessor"></span><span class="preprocessor">#pragma warning(disable : 4275)</span>
+<a name="l00008"></a>00008 <span class="preprocessor"></span><span class="keyword">namespace </span>Yanesdk { <span class="keyword">namespace </span>Network {
+<a name="l00009"></a>00009 
+<a name="l00016"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html">00016</a> <span class="keyword">class </span><a class="code" href="config_8h.html#e09eb0c414f823477c9795b493cc38a9">NETWORKMODULE_API</a> RawMemory : <span class="keyword">private</span> boost::noncopyable {
+<a name="l00017"></a>00017     uint8_t* memory;
+<a name="l00018"></a>00018     size_t size;
+<a name="l00019"></a>00019 <span class="keyword">public</span>:
+<a name="l00020"></a>00020     RawMemory();
+<a name="l00021"></a>00021     ~RawMemory();
+<a name="l00022"></a>00022 
+<a name="l00024"></a>00024     <span class="keywordtype">void</span> Resize(size_t n);
+<a name="l00025"></a>00025 
+<a name="l00027"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#387f0e32e859d17c005c4fa798198477">00027</a>     uint8_t* Get()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> memory; }
+<a name="l00029"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#5756041c2023bad10b6e8ac9e370f248">00029</a>     size_t GetSize()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> size; }
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031     <span class="comment">// 以下は無くてもいいけどあれば便利かもしれないヘルパーとか。</span>
+<a name="l00032"></a>00032 
+<a name="l00034"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#21c96f12e5d9f5a703564b31d7754e75">00034</a>     <span class="keywordtype">void</span> Append(<span class="keywordtype">void</span>* data, size_t dataLength) {
+<a name="l00035"></a>00035         size_t old = GetSize();
+<a name="l00036"></a>00036         Resize(old + dataLength);
+<a name="l00037"></a>00037         memcpy(Get() + old, data, dataLength);
+<a name="l00038"></a>00038     }
+<a name="l00039"></a>00039 
+<a name="l00041"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#b3dd0f074f6b03e11491fed523e9d9af">00041</a>     <span class="keywordtype">void</span> CopyFrom(<span class="keyword">const</span> RawMemory&amp; from) {
+<a name="l00042"></a>00042         Resize(0);
+<a name="l00043"></a>00043         Resize(from.<a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#5756041c2023bad10b6e8ac9e370f248">GetSize</a>());
+<a name="l00044"></a>00044         memcpy(Get(), from.<a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#387f0e32e859d17c005c4fa798198477">Get</a>(), from.<a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#5756041c2023bad10b6e8ac9e370f248">GetSize</a>());
+<a name="l00045"></a>00045     }
+<a name="l00047"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#75ffb990a99d49c54e26c49eed6daebb">00047</a>     <span class="keywordtype">void</span> CopyFrom(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; from) {
+<a name="l00048"></a>00048         Resize(0);
+<a name="l00049"></a>00049         <span class="keywordflow">if</span> (0 &lt; from.size()) {
+<a name="l00050"></a>00050             Resize(from.size());
+<a name="l00051"></a>00051             memcpy(Get(), &amp;from[0], from.size());
+<a name="l00052"></a>00052         }
+<a name="l00053"></a>00053     }
+<a name="l00055"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#8450871a0a7edef4e72bf17fdb16cb98">00055</a>     <span class="keyword">template</span>&lt;<span class="keyword">class</span> IT&gt; <span class="keywordtype">void</span> CopyFrom(IT it, IT itEnd) {
+<a name="l00056"></a>00056         Resize(0);
+<a name="l00057"></a>00057         <span class="keywordflow">if</span> (it != itEnd) {
+<a name="l00058"></a>00058             Resize(itEnd - it);
+<a name="l00059"></a>00059             <span class="comment">//std::copy(it, itEnd, GetBegin());</span>
+<a name="l00060"></a>00060             <span class="keywordflow">for</span> (uint8_t* p = GetBegin(); it != itEnd; ++it) *p++ = *it;
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062     }
+<a name="l00063"></a>00063 
+<a name="l00065"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#a1cf046e37e3f4ff56fa8c2aebd62f55">00065</a>     uint8_t* GetBegin()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Get(); }
+<a name="l00067"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#a191bb827dd7d3af90c82f7d54f8f769">00067</a>     uint8_t* GetEnd()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> Get() + GetSize(); }
+<a name="l00068"></a>00068 
+<a name="l00070"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#b5c43ebe3af7a2edf8127c642d51cd9f">00070</a>     std::vector&lt;uint8_t&gt; ToArray()<span class="keyword"> const </span>{
+<a name="l00071"></a>00071         <span class="comment">// コピーなので大きくなると重いが、</span>
+<a name="l00072"></a>00072         <span class="comment">// どうせネットワークで送受信する程度なので…。</span>
+<a name="l00073"></a>00073         <span class="keywordflow">return</span> std::vector&lt;uint8_t&gt;(GetBegin(), GetEnd());
+<a name="l00074"></a>00074     }
+<a name="l00075"></a>00075 
+<a name="l00077"></a><a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#4013b8d4782eb371a9982993c8022cdf">00077</a>     <span class="keywordtype">void</span> AssignTo(std::vector&lt;uint8_t&gt;&amp; data)<span class="keyword"> const </span>{
+<a name="l00078"></a>00078         data.assign(GetBegin(), GetEnd());
+<a name="l00079"></a>00079     }
+<a name="l00080"></a>00080 };
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082 }} <span class="comment">// namespace</span>
+<a name="l00083"></a>00083 <span class="preprocessor">#pragma warning(pop)</span>
+<a name="l00084"></a>00084 <span class="preprocessor"></span><span class="preprocessor">#endif // __RAWMEMORY_H__</span>
+</pre></div><hr size="1"><address style="align: right;"><small>NetworkModuleに対してFri Feb 16 12:02:09 2007に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.1-p1 </small></address>
+</body>
+</html>

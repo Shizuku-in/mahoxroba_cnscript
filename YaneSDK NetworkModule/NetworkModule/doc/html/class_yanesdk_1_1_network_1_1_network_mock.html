@@ -1,0 +1,650 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>NetworkModule: クラス Yanesdk::Network::NetworkMock</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.1-p1 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+    <li id="current"><a href="annotated.html"><span>クラス</span></a></li>
+    <li><a href="files.html"><span>ファイル</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="annotated.html"><span>構成</span></a></li>
+    <li><a href="hierarchy.html"><span>クラス階層</span></a></li>
+    <li><a href="functions.html"><span>構成メンバ</span></a></li>
+  </ul></div>
+<div class="nav">
+<a class="el" href="namespace_yanesdk.html">Yanesdk</a>::<a class="el" href="namespace_yanesdk_1_1_network.html">Network</a>::<a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html">NetworkMock</a></div>
+<h1>クラス Yanesdk::Network::NetworkMock</h1><!-- doxytag: class="Yanesdk::Network::NetworkMock" --><!-- doxytag: inherits="Yanesdk::Network::INetwork" --><code>#include &lt;<a class="el" href="_network_mock_8h-source.html">NetworkMock.h</a>&gt;</code>
+<p>
+<p>Yanesdk::Network::NetworkMockに対する継承グラフ
+<p><center><img src="class_yanesdk_1_1_network_1_1_network_mock.png" usemap="#Yanesdk::Network::NetworkMock_map" border="0" alt=""></center>
+<map name="Yanesdk::Network::NetworkMock_map">
+<area href="class_yanesdk_1_1_network_1_1_i_network.html" alt="Yanesdk::Network::INetwork" shape="rect" coords="0,0,196,24">
+</map>
+<a href="class_yanesdk_1_1_network_1_1_network_mock-members.html">すべてのメンバ一覧</a><hr><a name="_details"></a><h2>説明</h2>
+ネットワークの仮クライアント(mock object) 
+<p>
+開発時には、1台のマシンでサーバーとクライアントを動かしたり 1台のマシンで複数のクライアントを動かしたりする。そのために 仮想的に接続するためのmockを用意する。 
+<p>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr><td></td></tr>
+<tr><td colspan="2"><br><h2>Public メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#d281d76299e99eb0e823a90b879e2150">NetworkMock</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#cbd0c250852d70528923e962e2a32271">~NetworkMock</a> ()</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint64_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#79246a2cf49302b03cac0c655191b303">GetNow</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">ハンドルの生成のためのincremental counter  <a href="#79246a2cf49302b03cac0c655191b303"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#377e318838c314cdcec9171fca73fcef">Attach</a> (<a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html">NetworkMock</a> &amp;neighbor)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">動作テストのために、Connectしたときに別のNetworkMockのobjectがListenで接続を確立できるようにattachする。  <a href="#377e318838c314cdcec9171fca73fcef"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint64_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#94ab3ef32a0b945e935e8b32840d5a44">Connect</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">VN_rootに接続を要求  <a href="#94ab3ef32a0b945e935e8b32840d5a44"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">uint64_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#3d0ad7bde065721259da143ce8a99837">Listen</a> ()</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Client側からの接続をlisten(TCP/IPのlisten的な意味で)する。  <a href="#3d0ad7bde065721259da143ce8a99837"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#f23c60370c5a7415b3568732351b6b50">Disconnect</a> (uint64_t handle)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Listenで確立してあった接続を切断する。 以後、そのhandleは無効となる。  <a href="#f23c60370c5a7415b3568732351b6b50"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#98f401485cc089b54c6cb5b6263a185e">Flush</a> (uint64_t handle)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">write bufferをいますぐ送信する。  <a href="#98f401485cc089b54c6cb5b6263a185e"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">bool&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#afa2861cb426c8c429f228f2a7a75037">GetIpAddress</a> (uint64_t handle, <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;ipAddress)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">IPアドレスを取得する  <a href="#afa2861cb426c8c429f228f2a7a75037"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#3d91576000438b7333b34e2eafc68095">SetHostName</a> (const char *hostname, int portnumber)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">接続先ホスト名とポートを指定します。  <a href="#3d91576000438b7333b34e2eafc68095"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#184019312d45abfcee36e9da4d7cba26">SetMaxPacketLength</a> (int maxPacketLength)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">最大パケット長制限を設ける  <a href="#184019312d45abfcee36e9da4d7cba26"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#1455015bc0a42eba078f40a3f98a6fc9">Write</a> (uint64_t handle, const void *data, size_t dataLength)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">確立したコネクションに対してデータ送信  <a href="#1455015bc0a42eba078f40a3f98a6fc9"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#8c4a73c9fbdbd961a7c29d4bdf949273">Write</a> (uint64_t handle, const <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;memory)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">RawMemory版Write()  <a href="#8c4a73c9fbdbd961a7c29d4bdf949273"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#8bc97022af0acb33fb76f11a3d5716e5">Write</a> (uint64_t handle, const std::vector&lt; uint8_t &gt; &amp;memory)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vector版Write()  <a href="#8bc97022af0acb33fb76f11a3d5716e5"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#58a0225d0617eea036948fed537f0ad7">Read</a> (uint64_t handle, <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">確立したコネクションに対してデータの読み込み。  <a href="#58a0225d0617eea036948fed537f0ad7"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#01ed26ddaf75bb4f6ecbd4fc3f03ee92">Read</a> (uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vector版Read()  <a href="#01ed26ddaf75bb4f6ecbd4fc3f03ee92"></a><br></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#5ef87a8d5fb1fabe28316abc52b2c66a">GetIpAddress</a> (uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)</td></tr>
+
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">std::vector版GetIpAddress()  <a href="#5ef87a8d5fb1fabe28316abc52b2c66a"></a><br></td></tr>
+<tr><td colspan="2"><br><h2>Protected メソッド</h2></td></tr>
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#a8f69d08dc853cdf2812c5e5e3430736">InnerRead</a> (uint64_t handle, <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;data)</td></tr>
+
+<tr><td class="memItemLeft" nowrap align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html#0c5cf6f1051c099a19e21de7c1047e70">InnerWrite</a> (uint64_t handle, const void *data, size_t dataLength)</td></tr>
+
+</table>
+<hr><h2>コンストラクタとデストラクタ</h2>
+<a class="anchor" name="d281d76299e99eb0e823a90b879e2150"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::NetworkMock" ref="d281d76299e99eb0e823a90b879e2150" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Yanesdk::Network::NetworkMock::NetworkMock           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="cbd0c250852d70528923e962e2a32271"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::~NetworkMock" ref="cbd0c250852d70528923e962e2a32271" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Yanesdk::Network::NetworkMock::~NetworkMock           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+</div>
+</div><p>
+<hr><h2>関数</h2>
+<a class="anchor" name="79246a2cf49302b03cac0c655191b303"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::GetNow" ref="79246a2cf49302b03cac0c655191b303" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Yanesdk::Network::NetworkMock::GetNow           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+ハンドルの生成のためのincremental counter 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="377e318838c314cdcec9171fca73fcef"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Attach" ref="377e318838c314cdcec9171fca73fcef" args="(NetworkMock &amp;neighbor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::NetworkMock::Attach           </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_yanesdk_1_1_network_1_1_network_mock.html">NetworkMock</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>neighbor</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+動作テストのために、Connectしたときに別のNetworkMockのobjectがListenで接続を確立できるようにattachする。 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="94ab3ef32a0b945e935e8b32840d5a44"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Connect" ref="94ab3ef32a0b945e935e8b32840d5a44" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Yanesdk::Network::NetworkMock::Connect           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+VN_rootに接続を要求 
+<p>
+戻り値は、コネクションハンドル。 接続に失敗した場合は0。 
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#7dda2a48a29cae7ed5acebdb00063b72">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="3d0ad7bde065721259da143ce8a99837"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Listen" ref="3d0ad7bde065721259da143ce8a99837" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t Yanesdk::Network::NetworkMock::Listen           </td>
+          <td>(</td>
+          <td class="paramname">          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Client側からの接続をlisten(TCP/IPのlisten的な意味で)する。 
+<p>
+サーバー側でしかこのメソッドは呼び出さない。 戻り値は、コネクションハンドル。<p>
+確立したコネクションが気にいらないときは、 Disconnectを呼び出して接続を切断することが出来る。<p>
+接続を要求しているものがなければ0。 
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#d8c225e516d4b8995308de5bd1b8f4b6">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="f23c60370c5a7415b3568732351b6b50"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Disconnect" ref="f23c60370c5a7415b3568732351b6b50" args="(uint64_t handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::NetworkMock::Disconnect           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+Listenで確立してあった接続を切断する。 以後、そのhandleは無効となる。 
+<p>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#5466bd860d72a6e6b4dd5bf473226c09">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="98f401485cc089b54c6cb5b6263a185e"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Flush" ref="98f401485cc089b54c6cb5b6263a185e" args="(uint64_t handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::NetworkMock::Flush           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+write bufferをいますぐ送信する。 
+<p>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>接続が切断された場合は、非0が返る。 </dd></dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#96e7d6e9f6670836cc11277e836f46d5">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="afa2861cb426c8c429f228f2a7a75037"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::GetIpAddress" ref="afa2861cb426c8c429f228f2a7a75037" args="(uint64_t handle, RawMemory &amp;ipAddress)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Yanesdk::Network::NetworkMock::GetIpAddress           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>ipAddress</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+IPアドレスを取得する 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>handle</em>&nbsp;</td><td>IPアドレスを取得するハンドル </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>ipAddress</em>&nbsp;</td><td>IPアドレス </td></tr>
+  </table>
+</dl>
+<dl class="return" compact><dt><b>戻り値:</b></dt><dd>true:成功, false:失敗 </dd></dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#60cf0fd23411be2cc0e9bfca66bbc647">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="3d91576000438b7333b34e2eafc68095"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::SetHostName" ref="3d91576000438b7333b34e2eafc68095" args="(const char *hostname, int portnumber)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::NetworkMock::SetHostName           </td>
+          <td>(</td>
+          <td class="paramtype">const char *&nbsp;</td>
+          <td class="paramname"> <em>hostname</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>portnumber</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+接続先ホスト名とポートを指定します。 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>hostname</em>&nbsp;</td><td>ホスト名。受付側として利用する場合は無効 </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>portnumber</em>&nbsp;</td><td>ポート番号 </td></tr>
+  </table>
+</dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#8f71bbc84a0bd8e7233b68612b690a56">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="184019312d45abfcee36e9da4d7cba26"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::SetMaxPacketLength" ref="184019312d45abfcee36e9da4d7cba26" args="(int maxPacketLength)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Yanesdk::Network::NetworkMock::SetMaxPacketLength           </td>
+          <td>(</td>
+          <td class="paramtype">int&nbsp;</td>
+          <td class="paramname"> <em>maxPacketLength</em>          </td>
+          <td>&nbsp;)&nbsp;</td>
+          <td width="100%"><code> [virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+最大パケット長制限を設ける 
+<p>
+<dl compact><dt><b>引数:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>maxPacketLength</em>&nbsp;</td><td>値&gt;0なら制限値、値&lt;=0なら制限しない </td></tr>
+  </table>
+</dl>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#9752fb72e63da9df797b9a4c64c29f80">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="a8f69d08dc853cdf2812c5e5e3430736"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::InnerRead" ref="a8f69d08dc853cdf2812c5e5e3430736" args="(uint64_t handle, RawMemory &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::NetworkMock::InnerRead           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#bcd8e462cd3d28bcf6435c3a2b4c35a7">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="0c5cf6f1051c099a19e21de7c1047e70"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::InnerWrite" ref="0c5cf6f1051c099a19e21de7c1047e70" args="(uint64_t handle, const void *data, size_t dataLength)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::NetworkMock::InnerWrite           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>dataLength</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+
+<p>
+<a class="el" href="class_yanesdk_1_1_network_1_1_i_network.html#102cbd702226aadf6661a0cb31fa40de">Yanesdk::Network::INetwork</a>を実装しています。
+</div>
+</div><p>
+<a class="anchor" name="1455015bc0a42eba078f40a3f98a6fc9"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Write" ref="1455015bc0a42eba078f40a3f98a6fc9" args="(uint64_t handle, const void *data, size_t dataLength)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Write           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&nbsp;</td>
+          <td class="paramname"> <em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&nbsp;</td>
+          <td class="paramname"> <em>dataLength</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+確立したコネクションに対してデータ送信 
+<p>
+接続が切断された場合は、非0が返る。 送信は1～2秒分、bufferingしてから送信される。<p>
+Writeしたあと、Flushを呼び出すと、即座にbufferingしている ぶんを送信する。<p>
+connection切断時に非0が返る。 
+</div>
+</div><p>
+<a class="anchor" name="8c4a73c9fbdbd961a7c29d4bdf949273"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Write" ref="8c4a73c9fbdbd961a7c29d4bdf949273" args="(uint64_t handle, const RawMemory &amp;memory)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Write           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>memory</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+RawMemory版Write() 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="8bc97022af0acb33fb76f11a3d5716e5"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Write" ref="8bc97022af0acb33fb76f11a3d5716e5" args="(uint64_t handle, const std::vector&lt; uint8_t &gt; &amp;memory)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Write           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>memory</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vector版Write() 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="58a0225d0617eea036948fed537f0ad7"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Read" ref="58a0225d0617eea036948fed537f0ad7" args="(uint64_t handle, RawMemory &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Read           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+確立したコネクションに対してデータの読み込み。 
+<p>
+読み込むべきデータが無いならば data = nullが返る。<p>
+connection切断時に非0が返る。 
+</div>
+</div><p>
+<a class="anchor" name="01ed26ddaf75bb4f6ecbd4fc3f03ee92"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::Read" ref="01ed26ddaf75bb4f6ecbd4fc3f03ee92" args="(uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::Read           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vector版Read() 
+<p>
+
+</div>
+</div><p>
+<a class="anchor" name="5ef87a8d5fb1fabe28316abc52b2c66a"></a><!-- doxytag: member="Yanesdk::Network::NetworkMock::GetIpAddress" ref="5ef87a8d5fb1fabe28316abc52b2c66a" args="(uint64_t handle, std::vector&lt; uint8_t &gt; &amp;data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Yanesdk::Network::INetwork::GetIpAddress           </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&nbsp;</td>
+          <td class="paramname"> <em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; uint8_t &gt; &amp;&nbsp;</td>
+          <td class="paramname"> <em>data</em></td><td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td><td width="100%"><code> [inline, inherited]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>
+std::vector版GetIpAddress() 
+<p>
+
+</div>
+</div><p>
+<hr>このクラスの説明は次のファイルから生成されました:<ul>
+<li>NetworkModule/include/NetworkModule/<a class="el" href="_network_mock_8h-source.html">NetworkMock.h</a></ul>
+<hr size="1"><address style="align: right;"><small>NetworkModuleに対してFri Feb 16 12:02:09 2007に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.1-p1 </small></address>
+</body>
+</html>

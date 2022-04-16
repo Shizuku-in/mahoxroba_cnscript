@@ -1,0 +1,239 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5AD10454-A0F0-44D4-AC45-83F84D88250E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Yanesdk</RootNamespace>
+    <AssemblyName>Yanesdk</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="src\database\SQLBuilder.cs" />
+    <Compile Include="src\draw\Base\BitmapLoader.cs" />
+    <Compile Include="src\draw\Base\Color4ub.cs" />
+    <Compile Include="src\draw\Base\ColorKey.cs" />
+    <Compile Include="src\draw\Base\IScreen.cs" />
+    <Compile Include="src\draw\Geometry\Point.cs" />
+    <Compile Include="src\draw\Geometry\Rect.cs" />
+    <Compile Include="src\draw\Geometry\Size.cs" />
+    <Compile Include="src\draw\OpenGl\GlExtensions.cs" />
+    <Compile Include="src\draw\Base\DrawContext.cs" />
+    <Compile Include="src\draw\Base\DrawLayer.cs" />
+    <Compile Include="src\draw\Font\Font.cs" />
+    <Compile Include="src\draw\Font\FontLoader.cs" />
+    <Compile Include="src\draw\Font\FontRepository.cs" />
+    <Compile Include="src\draw\Base\FpsLayer.cs" />
+    <Compile Include="src\draw\OpenGl\Control2DGl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\draw\Base\TextureLoader.cs" />
+    <Compile Include="src\draw\Base\Textures.cs" />
+    <Compile Include="src\draw\Base\BitmapHelper.cs" />
+    <Compile Include="src\draw\Base\VirtualControl.cs">
+    </Compile>
+    <Compile Include="src\draw\Base\Win32DisplaySetting.cs" />
+    <Compile Include="src\draw\OpenGl\Win32Window2DGl.cs">
+    </Compile>
+    <Compile Include="src\draw\OpenGl\Screen2DGl.cs" />
+    <Compile Include="src\draw\GUIParts\TextureButton.cs" />
+    <Compile Include="src\draw\GUIParts\TextureGUI.cs" />
+    <Compile Include="src\draw\GUIParts\TextureString.cs" />
+    <Compile Include="src\draw\GUIParts\TextureImage.cs" />
+    <Compile Include="src\libs\macos\MacAPI.cs" />
+    <Compile Include="src\libs\sdl\SDLInitializer.cs" />
+    <Compile Include="src\network\INetwork.cs" />
+    <Compile Include="src\network\Network.cs" />
+    <Compile Include="src\libs\opengl\Gl.cs" />
+    <Compile Include="src\libs\opengl\Glu.cs" />
+    <Compile Include="src\draw\OpenGl\SdlWindow2DGl.cs" />
+    <Compile Include="src\draw\Base\Surface.cs" />
+    <Compile Include="src\draw\OpenGl\GlTexture.cs" />
+    <Compile Include="src\system\base\CurrnetDirectoryHelper.cs" />
+    <Compile Include="src\system\base\Platform.cs" />
+    <Compile Include="src\system\cache\CachedObjectSmartLoader.cs" />
+    <Compile Include="src\system\cache\UnmanagedResourceManager.cs" />
+    <Compile Include="src\system\math\Vector2d.cs" />
+    <Compile Include="src\system\math\Vector3d.cs" />
+    <Compile Include="src\draw\Base\Texture.cs" />
+    <Compile Include="src\input\JoyStick.cs" />
+    <Compile Include="src\input\Key.cs" />
+    <Compile Include="src\input\KeyBoardInput.cs" />
+    <Compile Include="src\input\KeyInput.cs" />
+    <Compile Include="src\input\MouseInput.cs" />
+    <Compile Include="src\input\VirtualKey.cs" />
+    <Compile Include="src\system\math\CRC32.cs" />
+    <Compile Include="src\system\math\Rand.cs" />
+    <Compile Include="src\system\math\Round.cs" />
+    <Compile Include="src\system\math\SinTable.cs" />
+    <Compile Include="src\libs\opengl\Opengl32.cs" />
+    <Compile Include="src\sound\Sound.cs" />
+    <Compile Include="src\sound\CDDA.cs" />
+    <Compile Include="src\sound\SoundLoader.cs" />
+    <Compile Include="src\database\DBConnect.cs" />
+    <Compile Include="src\system\base\CsvReader.cs" />
+    <Compile Include="src\system\base\DirEnumerator.cs" />
+    <Compile Include="src\system\base\DllManager.cs" />
+    <Compile Include="src\system\base\FileSys.cs" />
+    <Compile Include="src\system\base\FilenameListReader.cs" />
+    <Compile Include="src\system\base\LogWriter.cs" />
+    <Compile Include="src\system\base\StringBuilderEncoding.cs" />
+    <Compile Include="src\system\base\StringConv.cs" />
+    <Compile Include="src\system\misc\WHEN_TERM.cs" />
+    <Compile Include="src\system\thread\ThreadPooler.cs" />
+    <Compile Include="src\system\timer\Counter.cs" />
+    <Compile Include="src\movie\Movie.cs" />
+    <Compile Include="src\movie\SMPEG.cs" />
+    <Compile Include="src\ytl\base\ByteSerializer.cs" />
+    <Compile Include="src\ytl\ExtenedCollections\IndexedList.cs" />
+    <Compile Include="src\ytl\singleton\RefSingleton.cs" />
+    <Compile Include="src\system\cache\SimpleCacheSystem.cs" />
+    <Compile Include="src\ytl\ExtenedCollections\GenericsHelper.cs" />
+    <Compile Include="src\system\cache\CachedObjectLoader.cs" />
+    <Compile Include="src\ytl\base\MemoryCopy.cs" />
+    <Compile Include="src\ytl\base\Pointer.cs" />
+    <Compile Include="src\ytl\SynchronizedCollections\SynchronizedDictionary.cs" />
+    <Compile Include="src\ytl\SynchronizedCollections\SynchronizedLinkedList.cs" />
+    <Compile Include="src\ytl\SynchronizedCollections\SynchronizedList.cs" />
+    <Compile Include="src\ytl\SynchronizedCollections\SynchronizedQueue.cs" />
+    <Compile Include="src\system\task\TaskController.cs" />
+    <Compile Include="src\system\timer\FixTimer.cs" />
+    <Compile Include="src\system\timer\FpsTimer.cs" />
+    <Compile Include="src\system\timer\GameTimer.cs" />
+    <Compile Include="src\system\cache\CacheSystem.cs" />
+    <Compile Include="src\ytl\base\Exception.cs" />
+    <Compile Include="src\libs\sdl\SDL.cs" />
+    <Compile Include="src\ytl\ExtenedCollections\ObjectPool.cs" />
+    <Compile Include="src\system\task\PriorityCallback.cs" />
+    <Compile Include="src\ytl\base\YanesdkResult.cs" />
+    <Compile Include="src\ytl\singleton\Singleton.cs" />
+    <Compile Include="src\ytl\SynchronizedCollections\ThreadSharedObject.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="lib\x64\jpeg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\libpng12.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\libtiff.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\ogg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\SDL.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\SDL_image.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\SDL_mixer.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\SDL_ttf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\smpeg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\vorbisfile.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x64\zlib1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\jpeg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\libpng12.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\libtiff.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\ogg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\SDL.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\SDL_image.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\SDL_mixer.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\SDL_ttf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\smpeg.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\vorbisfile.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\x86\zlib1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="readme.txt" />
+    <Content Include="src\network\サーバー設計考え方.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Yanesdk.dll.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

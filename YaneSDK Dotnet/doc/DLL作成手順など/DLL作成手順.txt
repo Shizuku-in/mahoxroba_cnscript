@@ -1,0 +1,212 @@
+
+SDLなどの、x86 / x64のDLL を作成するための手順。
+
+VC++2005Express、Platform SDK、DirectX SDKを使用。
+
+
+● ディレクトリ構成
+
+以下を１つのディレクトリへ。
+
+freetype-2.1.10\
+jpeg-6b\
+libogg-1.1.3\
+libpng-1.2.14\
+libvorbis-1.1.2\
+SDL_image-1.2.5\
+SDL_mixer-1.2.7\
+SDL_ttf-2.0.8\
+SDL-1.2.11\
+smpeg-0.4.4\
+tiff-3.8.2\
+zlib-1.2.3\
+
+jpeg-vc8\
+libtiff-vc8\
+exec-VCExpress.bat
+exec-VCExpress-for-x64.bat
+
+● パッチあてなど
+
+ > copy /Y Yanesdk\license\SDL-1.2.11-win32_patched\SDL_syswm.c SDL-1.2.11\src\video\wincommon
+ > copy /Y Yanesdk\license\SDL-1.2.11-win32_patched\SDL_yuv.c   SDL-1.2.11\src\video
+ > copy /Y Yanesdk\license\SDL_mixer-1.2.7_patched\common.c     SDL_mixer-1.2.7\timidity
+ > copy /Y Yanesdk\license\SDL_mixer-1.2.7_patched\mixer.c      SDL_mixer-1.2.7
+ > copy /Y Yanesdk\license\smpeg-0.4.4_patched\MPEGaudio.cpp    smpeg-0.4.4\audio
+ > copy /Y Yanesdk\license\smpeg-0.4.4_patched\gdith.cpp        smpeg-0.4.4\video
+ > copy /Y Yanesdk\license\smpeg-0.4.4_patched\readfile.cpp     smpeg-0.4.4\video
+
+ > (echo #undef TT_CONFIG_OPTION_EMBEDDED_BITMAPS
+    echo #undef FT_CONFIG_OPTION_OLD_INTERNALS ) >> freetype-2.1.10\devel\ftoption.h
+ > (echo #undef TT_CONFIG_OPTION_EMBEDDED_BITMAPS
+    echo #undef FT_CONFIG_OPTION_OLD_INTERNALS ) >> freetype-2.1.10\include\freetype\config\ftoption.h
+
+ 何故かリンク通らなかったので freetype-2.1.10\include\freetype\config\ftmodule.h の
+  FT_USE_MODULE(otv_module_class)
+ をコメントアウト。
+
+
+● 32ビット版DLLの作成
+
+exec-VCExpress.bat でIDEを起動して、slnやdswを読み込んでビルド。
+Express以外のVisual Studioな場合、最後の
+「start VCExpress … 」のところを→ 「start devenv … 」とか。
+
+
+afxres.h が無いと言われたら、その都度
+#include <windows.h>
+#define IDC_STATIC (-1)
+に置き換え。
+
+
+・SDL-1.2.11/VisualC/SDL.sln
+
+・zlib-1.2.3\projects\visualc6\zlib.dsw
+
+・libpng-1.2.12\projects\visualc71\libpng.sln
+    ↑zlibへの相対パスが微妙なのと、ファイル名が
+    libpng13.dll になっちゃうのとで、少し修正が必要。
+    ・ソリューションからzlibを削除
+    ・プロジェクトのプロパティ→構成プロパティ→リンカ→出力ファイルを libpng12.dll へ。
+    ・同じく リンカ → 入力 → 追加の依存ファイル に zlib1.lib
+
+・jpeg-vc8\jpeg.sln
+・libtiff-vc8\libtiff.sln
+    ↑x64のこともあるので自前でプロジェクトを作成(´ω`)
+
+・SDL_image-1.2.5/VisualC/SDL_image.dsw
+    SDL_image-1.2.5\VisualC\graphicsは削除する。
+
+・smpeg-0.4.4\VisualC\smpeg.dsw
+    gtv, plaympegは要らない。
+    SDL.libがソースと一緒にプロジェクトに入っちゃってるので削除。
+
+・SDL_mixer-1.2.7/VisualC/SDL_mixer.dsw
+
+・freetype-2.1.10\builds\win32\visualc\freetype.sln
+    ↑構成はRelease Multithread。
+    プロジェクトのプロパティ → C/C++ →
+    コード生成 → ランタイムライブラリを マルチスレッド DLL (/MD) に。
+・SDL_ttf-2.0.8\VisualC\SDL_ttf.dsw
+    SDL_ttf-2.0.8\VisualC\FreeType と、プロジェクトに入ってるfreetype2110MT.libは削除。
+    SDL_ttfのプロパティ → リンカ → 入力 → 追加の依存ファイルに freetype2110MT.lib を追加。
+
+・libogg-1.1.3\win32\ogg.sln
+・libvorbis-1.1.2\win32\vorbis.sln
+    ogg_dynamicのプロパティ → C/C++ →
+    コード生成 → ランタイムライブラリを マルチスレッド DLL (/MD) に。
+    同じく、vorbis_dynamic, vorbisfile_dynamic のも。(IDE上でまとめて変更可能)
+
+
+※ ついでにvorbis.dllを要らなくしてみる。
+
+vorbis_staticの設定、
+    C/C++ → コード設定 → ランタイムライブラリ を /MD に。
+vorbisfile_dynamicの設定、
+    リンカ → 全般 → 追加のライブラリディレクトリの Vorbis_Dynamic_Release を Vorbis_Static_Release に。
+    リンカ → 入力 → 追加の依存ファイル の vorbis.lib を vorbis_static.lib に。
+
+以上でリビルドすれば vorbisfile.dll だけでOK。
+
+            
+● 出来たDLLたちを１個のフォルダにまとめてみる。(コピペ用)
+
+    mkdir lib32
+    copy /Y lib32ogg-1.1.3\win32\dynamic_release\ogg.dll lib32
+    copy /Y lib32vorbis-1.1.2\win32\vorbisfile_dynamic_release\vorbisfile.dll lib32
+    copy /Y SDL_image-1.2.5\VisualC\release\SDL_image.dll lib32
+    copy /Y SDL_mixer-1.2.7\VisualC\release\SDL_mixer.dll lib32
+    copy /Y SDL_ttf-2.0.8\VisualC\release\SDL_ttf.dll lib32
+    copy /Y SDL-1.2.11\VisualC\SDL\release\SDL.dll lib32
+    copy /Y smpeg-0.4.4\VisualC\release\smpeg.dll lib32
+    copy /Y zlib32-1.2.3\projects\visualc6\win32_dll_release\zlib321.dll lib32
+    copy /Y lib32png-1.2.14\projects\visualc71\win32_dll_asm_release\lib32png12.dll lib32
+    copy /Y jpeg-vc8\Release\jpeg.dll lib32
+    copy /Y lib32tiff-vc8\Release\lib32tiff.dll lib32
+
+    copy /Y lib32vorbis-1.1.2\win32\vorbis_dynamic_release\vorbis.dll lib32
+
+
+● 64ビット版DLLの作成
+
+構成とか作って分けるのは面倒だったので、32ビット版のビルドに成功したのを
+丸ごとコピって使う事にする。(´ω`)
+
+基本は、
+
+・ exec-VCExpress-for-x64.bat でIDEを起動
+・ slnを開く
+・ プロジェクトのプロパティ → C/C++ → コマンドライン → 追加のオプションに
+     /U_M_IX86 /D_WIN64 /DWIN64 /D_M_X64 /D_M_AMD64
+   を追加。(無くてもコンパイル通ってしまうので注意)
+・ プロジェクトのプロパティ → リンカ → コマンドライン → 追加のオプションに
+     /MACHINE:AMD64 bufferoverflowu.lib
+   を追加。
+・ リビルド
+
+といった感じ。
+以下それぞれの注意点など。
+
+
+・SDL-1.2.11/VisualC/SDL.sln
+    プロジェクトのプロパティ → リンカ → コマンドライン → 追加のオプションに
+    何故か /MACHINE:i386 が入ってたので消す。
+
+・zlib-1.2.3\projects\visualc6\zlib.dsw
+    → zlibだけでOK
+
+・libpng-1.2.12\projects\visualc71\libpng.sln
+    → libpngだけでOK。
+        DLL ASM Release ではなく DLL Release。
+        32ビット版同様に出力ファイル名の変更など。
+
+・jpeg-vc8\jpeg.sln
+・libtiff-vc8\libtiff.sln
+
+・SDL_image-1.2.5/VisualC/SDL_image.dsw
+    → SDL_imageだけでOK
+
+・smpeg-0.4.4\VisualC\smpeg.dsw
+    → smpegだけでOK
+
+・libogg-1.1.3\win32\ogg.sln
+    → ogg_dynamicだけでOK
+
+・libvorbis-1.1.2\win32\vorbis.sln
+    → vorbis_static, vorbisfile_dynamicだけでOK
+
+        libvorbis-1.1.2\lib\os.h の127行目あたりがコンパイル出来ないので、
+        119行目あたりの #if に && 0 を追加 ←適当(´ω`)
+
+        C/C++ → ブラウザ情報 → ブラウザ情報を作成する を「なし」に。
+
+        vorbisfile_dynamic は、プロジェクトの依存関係を開いてvorbis_dynamicへの依存を外す。
+
+        他と同様にリンカのオプションとか適当に。
+
+・SDL_mixer-1.2.7/VisualC/SDL_mixer.dsw
+    → playmus, playwave は要らない。
+        mikmod, native_midi, timidyは多分必要なので注意。
+
+・freetype-2.1.10\builds\win32\visualc\freetype.sln
+
+・SDL_ttf-2.0.8\VisualC\SDL_ttf.dsw
+    → SDL_ttfだけでOK
+
+
+● 出来たDLLたちを１個のフォルダにまとめてみる。(コピペ用)
+
+    mkdir lib64
+    copy /Y libogg-1.1.3\win32\dynamic_release\ogg.dll lib64
+    copy /Y libvorbis-1.1.2\win32\vorbisfile_dynamic_release\vorbisfile.dll lib64
+    copy /Y SDL_image-1.2.5\VisualC\release\SDL_image.dll lib64
+    copy /Y SDL_mixer-1.2.7\VisualC\release\SDL_mixer.dll lib64
+    copy /Y SDL_ttf-2.0.8\VisualC\release\SDL_ttf.dll lib64
+    copy /Y SDL-1.2.11\VisualC\SDL\release\SDL.dll lib64
+    copy /Y smpeg-0.4.4\VisualC\release\smpeg.dll lib64
+    copy /Y zlib-1.2.3\projects\visualc6\win32_dll_release\zlib1.dll lib64
+    copy /Y libpng-1.2.14\projects\visualc71\win32_dll_release\libpng12.dll lib64
+    copy /Y jpeg-vc8\Release\jpeg.dll lib64
+    copy /Y libtiff-vc8\Release\libtiff.dll lib64
+
+

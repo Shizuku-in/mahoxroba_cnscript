@@ -1,0 +1,21 @@
+diff -u --recursive SDL_mixer-1.2.7/mixer.c SDL_mixer-1.2.7-patched/mixer.c
+--- SDL_mixer-1.2.7/mixer.c	Mon May 01 00:25:58 2006
++++ SDL_mixer-1.2.7-patched/mixer.c	Thu Nov 30 18:12:37 2006
+@@ -426,6 +426,7 @@
+ 		}
+ 		return(NULL);
+ 	}
++	memset(chunk, 0, sizeof(Mix_Chunk));
+ 
+ 	/* Find out what kind of audio file this is */
+ 	magic = SDL_ReadLE32(src);
+diff -u --recursive SDL_mixer-1.2.7/timidity/common.c SDL_mixer-1.2.7-patched/timidity/common.c
+--- SDL_mixer-1.2.7/timidity/common.c	Sun May 14 12:54:26 2006
++++ SDL_mixer-1.2.7-patched/timidity/common.c	Wed Nov 29 18:27:34 2006
+@@ -244,4 +244,6 @@
+     free(plp);
+     plp = next_plp;
+   }
++
++  pathlist = NULL;
+ }

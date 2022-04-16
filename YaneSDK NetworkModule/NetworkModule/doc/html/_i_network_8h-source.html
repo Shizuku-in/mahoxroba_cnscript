@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html;charset=Shift_JIS">
+<title>NetworkModule: NetworkModule/include/NetworkModule/INetwork.h ソースファイル</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css">
+<link href="tabs.css" rel="stylesheet" type="text/css">
+</head><body>
+<!-- 作成： Doxygen 1.5.1-p1 -->
+<div class="tabs">
+  <ul>
+    <li><a href="index.html"><span>メインページ</span></a></li>
+    <li><a href="namespaces.html"><span>ネームスペース</span></a></li>
+    <li><a href="annotated.html"><span>クラス</span></a></li>
+    <li id="current"><a href="files.html"><span>ファイル</span></a></li>
+  </ul></div>
+<div class="tabs">
+  <ul>
+    <li><a href="files.html"><span>ファイル一覧</span></a></li>
+    <li><a href="globals.html"><span>ファイルメンバ</span></a></li>
+  </ul></div>
+<h1>NetworkModule/include/NetworkModule/INetwork.h</h1><a href="_i_network_8h.html">説明を見る。</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef __INETWORK_H__</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define __INETWORK_H__</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#include "<a class="code" href="config_8h.html">config.h</a>"</span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include "<a class="code" href="_raw_memory_8h.html">RawMemory.h</a>"</span>
+<a name="l00005"></a>00005 <span class="keyword">namespace </span>Yanesdk { <span class="keyword">namespace </span>Network {
+<a name="l00006"></a>00006 
+<a name="l00008"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html">00008</a> <span class="keyword">class </span><a class="code" href="config_8h.html#e09eb0c414f823477c9795b493cc38a9">NETWORKMODULE_API</a> INetwork {
+<a name="l00009"></a>00009 <span class="keyword">public</span>:
+<a name="l00010"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html#fc625fa7c04473a53e37022115f26342">00010</a>     <span class="keyword">virtual</span> ~INetwork() {}
+<a name="l00011"></a>00011     
+<a name="l00018"></a>00018     <span class="keyword">virtual</span> uint64_t Connect() = 0;
+<a name="l00019"></a>00019 
+<a name="l00031"></a>00031     <span class="keyword">virtual</span> uint64_t Listen() = 0;
+<a name="l00032"></a>00032 
+<a name="l00037"></a>00037     <span class="keyword">virtual</span> <span class="keywordtype">void</span> Disconnect(uint64_t handle) = 0;
+<a name="l00038"></a>00038 
+<a name="l00050"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html#1455015bc0a42eba078f40a3f98a6fc9">00050</a>     <span class="keywordtype">int</span> Write(uint64_t handle, <span class="keyword">const</span> <span class="keywordtype">void</span>* data, size_t dataLength) {
+<a name="l00051"></a>00051         <span class="keywordflow">return</span> InnerWrite(handle, data, dataLength);
+<a name="l00052"></a>00052     }
+<a name="l00053"></a>00053 
+<a name="l00055"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html#8c4a73c9fbdbd961a7c29d4bdf949273">00055</a>     <span class="keywordtype">int</span> Write(uint64_t handle, <span class="keyword">const</span> <a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a>&amp; memory) {
+<a name="l00056"></a>00056         <span class="keywordflow">return</span> InnerWrite(handle, memory.<a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#387f0e32e859d17c005c4fa798198477">Get</a>(), memory.<a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#5756041c2023bad10b6e8ac9e370f248">GetSize</a>());
+<a name="l00057"></a>00057     }
+<a name="l00058"></a>00058 
+<a name="l00060"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html#8bc97022af0acb33fb76f11a3d5716e5">00060</a>     <span class="keywordtype">int</span> Write(uint64_t handle, <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; memory) {
+<a name="l00061"></a>00061         <span class="keywordflow">return</span> InnerWrite(handle, 0 &lt; memory.size() ? &amp;memory[0] : NULL, memory.size());
+<a name="l00062"></a>00062     }
+<a name="l00063"></a>00063 
+<a name="l00069"></a>00069     <span class="keyword">virtual</span> <span class="keywordtype">int</span> Flush(uint64_t handle) = 0;
+<a name="l00070"></a>00070 
+<a name="l00079"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html#58a0225d0617eea036948fed537f0ad7">00079</a>     <span class="keywordtype">int</span> Read(uint64_t handle, <a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a>&amp; data) {
+<a name="l00080"></a>00080         <span class="keywordflow">return</span> InnerRead(handle, data);
+<a name="l00081"></a>00081     }
+<a name="l00082"></a>00082 
+<a name="l00084"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html#01ed26ddaf75bb4f6ecbd4fc3f03ee92">00084</a>     <span class="keywordtype">int</span> Read(uint64_t handle, std::vector&lt;uint8_t&gt;&amp; data) {
+<a name="l00085"></a>00085         <a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> memory;
+<a name="l00086"></a>00086         <span class="keywordtype">int</span> result = InnerRead(handle, memory);
+<a name="l00087"></a>00087         memory.<a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#4013b8d4782eb371a9982993c8022cdf">AssignTo</a>(data);
+<a name="l00088"></a>00088         <span class="keywordflow">return</span> result;
+<a name="l00089"></a>00089     }
+<a name="l00090"></a>00090 
+<a name="l00097"></a>00097     <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetHostName(<span class="keyword">const</span> <span class="keywordtype">char</span>* hostname, <span class="keywordtype">int</span> portnumber) = 0;
+<a name="l00098"></a>00098 
+<a name="l00106"></a>00106     <span class="keyword">virtual</span> <span class="keywordtype">bool</span> GetIpAddress(uint64_t handle, <a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a>&amp; ipAddress) = 0;
+<a name="l00107"></a>00107 
+<a name="l00109"></a><a class="code" href="class_yanesdk_1_1_network_1_1_i_network.html#5ef87a8d5fb1fabe28316abc52b2c66a">00109</a>     <span class="keywordtype">int</span> GetIpAddress(uint64_t handle, std::vector&lt;uint8_t&gt;&amp; data) {
+<a name="l00110"></a>00110         <a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a> memory;
+<a name="l00111"></a>00111         <span class="keywordtype">bool</span> result = GetIpAddress(handle, memory);
+<a name="l00112"></a>00112         memory.<a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html#4013b8d4782eb371a9982993c8022cdf">AssignTo</a>(data);
+<a name="l00113"></a>00113         <span class="keywordflow">return</span> result;
+<a name="l00114"></a>00114     }
+<a name="l00115"></a>00115 
+<a name="l00121"></a>00121     <span class="keyword">virtual</span> <span class="keywordtype">void</span> SetMaxPacketLength(<span class="keywordtype">int</span> maxPacketLength) = 0;
+<a name="l00122"></a>00122 
+<a name="l00123"></a>00123 <span class="keyword">protected</span>:
+<a name="l00124"></a>00124     <span class="keyword">virtual</span> <span class="keywordtype">int</span> InnerRead(uint64_t handle, <a class="code" href="class_yanesdk_1_1_network_1_1_raw_memory.html">RawMemory</a>&amp; data) = 0;
+<a name="l00125"></a>00125     <span class="keyword">virtual</span> <span class="keywordtype">int</span> InnerWrite(uint64_t handle, <span class="keyword">const</span> <span class="keywordtype">void</span>* data, size_t dataLength) = 0;
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127 };
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129 }} <span class="comment">// namespace</span>
+<a name="l00130"></a>00130 <span class="preprocessor">#endif // __INETWORK_H__</span>
+</pre></div><hr size="1"><address style="align: right;"><small>NetworkModuleに対してFri Feb 16 12:02:09 2007に生成されました。&nbsp;
+<a href="http://www.doxygen.org/index.html">
+<img src="doxygen.png" alt="doxygen" align="middle" border="0"></a> 1.5.1-p1 </small></address>
+</body>
+</html>

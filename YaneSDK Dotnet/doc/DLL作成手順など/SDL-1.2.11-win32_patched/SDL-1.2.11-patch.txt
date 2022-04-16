@@ -1,0 +1,60 @@
+Only in SDL-1.2.11/src: t.o
+diff -u --recursive SDL-1.2.11/src/video/SDL_yuv.c SDL-1.2.11-patched/src/video/SDL_yuv.c
+--- SDL-1.2.11/src/video/SDL_yuv.c	Mon May 01 01:02:48 2006
++++ SDL-1.2.11-patched/src/video/SDL_yuv.c	Wed Nov 29 18:00:01 2006
+@@ -94,22 +94,26 @@
+ 		srcx -= (dstx * overlay->w) / dstrect->w;
+ 		dstx = 0;
+ 	}
++/*
+ 	if ( (dstx+dstw) > current_video->screen->w ) {
+ 		int extra = (dstx+dstw - current_video->screen->w);
+ 		srcw -= (extra * overlay->w) / dstrect->w;
+ 		dstw -= extra;
+ 	}
++*/
+ 	if ( dsty < 0 ) {
+ 		srch += (dsty * overlay->h) / dstrect->h;
+ 		dsth += dsty;
+ 		srcy -= (dsty * overlay->h) / dstrect->h;
+ 		dsty = 0;
+ 	}
++/*
+ 	if ( (dsty+dsth) > current_video->screen->h ) {
+ 		int extra = (dsty+dsth - current_video->screen->h);
+ 		srch -= (extra * overlay->h) / dstrect->h;
+ 		dsth -= extra;
+ 	}
++*/
+ 	if ( srcw <= 0 || srch <= 0 ||
+ 	     srch <= 0 || dsth <= 0 ) {
+ 		return 0;
+diff -u --recursive SDL-1.2.11/src/video/wincommon/SDL_syswm.c SDL-1.2.11-patched/src/video/wincommon/SDL_syswm.c
+--- SDL-1.2.11/src/video/wincommon/SDL_syswm.c	Mon May 01 01:02:44 2006
++++ SDL-1.2.11-patched/src/video/wincommon/SDL_syswm.c	Wed Nov 29 18:00:01 2006
+@@ -226,6 +226,15 @@
+ #endif /* DISABLE_ICON_SUPPORT */
+ }
+ 
++char *SDL_iconv_utf8_acp(char *in) {
++	Uint16 *lpsz = SDL_iconv_utf8_ucs2(in);
++	size_t len = WideCharToMultiByte(CP_ACP, 0, lpsz, -1, NULL, 0, NULL, NULL);
++	char *out = SDL_malloc(len + 1);
++	WideCharToMultiByte(CP_ACP, 0, lpsz, -1, out, len, NULL, NULL);
++	SDL_free(lpsz);
++	return out;
++}
++
+ void WIN_SetWMCaption(_THIS, const char *title, const char *icon)
+ {
+ #ifdef _WIN32_WCE
+@@ -234,7 +243,8 @@
+ 	SetWindowText(SDL_Window, lpszW);
+ 	SDL_free(lpszW);
+ #else
+-	char *lpsz = SDL_iconv_utf8_latin1((char *)title);
++//	char *lpsz = SDL_iconv_utf8_latin1((char *)title);
++	char *lpsz = SDL_iconv_utf8_acp((char *)title);
+ 	SetWindowText(SDL_Window, lpsz);
+ 	SDL_free(lpsz);
+ #endif
